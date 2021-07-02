@@ -39,7 +39,7 @@ public class NBody{
 
 		String imageToDraw = "images/starfield.jpg";
 
-		for(double timing = 0; timing <= T; timing = timing + 1 ){
+		for(double timing = 0; timing <= T; timing = timing + dt ){
 			double[] xForces = new double[planets.length];
 			double[] yForces = new double[planets.length];
 			for(int i = 0; i < planets.length; i = i + 1){
@@ -67,8 +67,6 @@ public class NBody{
 			/* Shows the drawing to the screen, and waits 2000 milliseconds. */
 			StdDraw.show();
 			StdDraw.pause(10);
-
-			T = T + dt;
 		}
 
 		StdOut.printf("%d\n", planets.length);
